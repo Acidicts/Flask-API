@@ -1,6 +1,6 @@
 from flask import Flask, jsonify, Blueprint, request, redirect
 from random import randint
-from llama_cpp import Llama
+# from llama_cpp import Llama
 
 requests = Blueprint('api', __name__)
 ntl = {
@@ -66,14 +66,14 @@ def bye():
     return redirect('/api?code=bye')
 
 
-@requests.route('/ai')
-def ai():
-    model_path = ".. /API/llama-2-7b-chat.Q2_K.gguf"
-
-    prompt = request.args.get('prompt')
-    llm = Llama(model_path=model_path, n_ctx=2048)
-
-    # Generate a response
-    output = llm(prompt)
-
-    return output["choices"][0]["text"]
+# @requests.route('/ai')
+# def ai():
+#     model_path = ".. /API/llama-2-7b-chat.Q2_K.gguf"
+#
+#     prompt = request.args.get('prompt')
+#     llm = Llama(model_path=model_path, n_ctx=2048)
+#
+#     # Generate a response
+#     output = llm(prompt)
+#
+#     return output["choices"][0]["text"]
